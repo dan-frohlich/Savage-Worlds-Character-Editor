@@ -4,10 +4,10 @@
 // ==========================================================================
 /*globals SavageWorldsCharacterEditor */
 
-SavageWorldsCharacterEditor = SC.Application.create();
+var SWCE = SC.Application.create();
 
 SC.ready(function() {
-  SavageWorldsCharacterEditor.mainPane = SC.TemplatePane.append({
+  SWCE.mainPane = SC.TemplatePane.append({
     layerId: 'savage_worlds_character_editor',
     templateName: 'savage_worlds_character_editor'
   });
