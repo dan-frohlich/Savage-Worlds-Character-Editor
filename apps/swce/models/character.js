@@ -17,6 +17,9 @@ SWCE.Character = SC.Record.extend(
 	xp: SC.Record.attr(Number, { defaultValue: 0 }),
 	race: SC.Record.attr(String),
 	
+	// TODO: Add hindrances
+	
 	attr: SC.Record.toMany('SWCE.CharAttribute', { inverse: 'char', isMaster: YES }),
 	skills: SC.Record.toMany('SWCE.CharSkill', { inverse: 'char', isMaster: YES }),
+	edges: SC.Record.toMany('SWCE.CharEdge', { inverse: 'char', isMaster: YES }),
 }) ;
