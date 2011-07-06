@@ -30,5 +30,12 @@ SWCE.Character = SC.Record.extend(
 	pace: function() {
 		// TODO: Add edges, gear or encumbrance to this
 		return this.get('pace_val') + ' (' + this.get('pace_die') + ')';
-	}.property('pace_die', 'pace_val').cacheable()
+	}.property('pace_die', 'pace_val').cacheable(),
+	
+	parry: function() {
+		// TODO: Add edges to this
+		var skill = this.get('skills').findProperty('name', 'fighting');
+		var val = skill ? skill.get('value').substring(1) : 2;
+		return 2 + (val/2);
+	}.property('attr').cacheable()
 }) ;
