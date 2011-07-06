@@ -37,5 +37,17 @@ SWCE.Character = SC.Record.extend(
 		var skill = this.get('skills').findProperty('name', 'fighting');
 		var val = skill ? skill.get('value').substring(1) : 2;
 		return 2 + (val/2);
-	}.property('attr').cacheable()
+	}.property('attr').cacheable(),
+	
+	armor: SC.Record.attr(Number, { defaultValue: 0 }),
+	toughness: function() {
+		// TODO: Add edges to this
+		var attr = this.get('attr').findProperty('short', 'vi');
+		var val = attr.get('value').substring(1);
+		val = 2 + (val/2);
+		var armor = this.get('armor');
+		if(armor)
+			return (val+armor) + ' (' + armor + ')';
+		return val;
+	}.property('attr', 'armor').cacheable()
 }) ;
