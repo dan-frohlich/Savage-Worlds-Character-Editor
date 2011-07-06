@@ -14,7 +14,9 @@ SWCE.Character.FIXTURES = [
 		race: 'Human',
 		
 		attr: [1, 2, 3, 4, 5],
-		skills: [1, 2, 3,4,5,6,7,8]
+		skills: [1, 2, 3,4,5,6,7,8],
+		edges: [1,2,3,4,5,6,7],
+
+		armor: 7
 	}
 ];
-console.log(SWCE.Character.FIXTURES);
