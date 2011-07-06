@@ -4,7 +4,9 @@
 // ==========================================================================
 /*globals SavageWorldsCharacterEditor */
 
-var SWCE = SC.Application.create();
+var SWCE = SC.Application.create({
+	store: SC.Store.create().from(SC.Record.fixtures)
+});
 
 SC.ready(function() {
   SWCE.mainPane = SC.TemplatePane.append({
