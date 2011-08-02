@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^character/(.+)/(.+)/$ index.php?player=$1&character=$2 [L,NC]
